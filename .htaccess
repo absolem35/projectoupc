@@ -1,0 +1,12 @@
+#DirectoryIndex index.php
+#Evitar que el index.php se vea en la URL (CodeIgniter)
+RewriteEngine on
+#### En caso de que se encuentre en el localhost
+#RewriteBase /sirelsoft/
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+
+
